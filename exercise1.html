@@ -1,0 +1,42 @@
+<script type= "text/javascript">
+
+	function loadit()
+	{
+	
+	document.getElementById('myfirstdiv').innerHTML=document.form1.presidents.value;
+	
+	switch (document.form1.presidents.value) {
+	  case 'trump':
+		document.getElementById('myfirstdiv').innerHTML = "<span style='color: red;'> Trump was born on June 14, 1946</span>";
+		break;
+	  case 'obama':
+		document.getElementById('myfirstdiv').innerHTML ="<span style='color: blue;'>Obama was born on August 4, 1961";
+		break;
+	case 'bush':
+		document.getElementById('myfirstdiv').innerHTML ="<span style='color: red;'>Bush was born on July 6, 1946";
+		break;
+	case 'clinton':
+		document.getElementById('myfirstdiv').innerHTML ="<span style='color: blue;'>Clinton was born on August 19, 1946";
+		break;
+	}
+	
+	}
+	
+	
+	</script>
+	
+	<br>
+	<body>
+	<form name='form1'>
+	<select id='testit' name='presidents' style='font-size:30pt' onchange='loadit()'>
+	<option value='Waiting for a selection'>Select president</option>
+	<option value='trump'>Trump</option>
+	<option value='obama'>Obama</option>
+	<option value='bush'>Bush</option>
+	<option value= 'clinton'>Clinton</option>
+	</select>
+	
+	
+	<div id='myfirstdiv' style='border:solid 2px; font-size:30pt'>Waiting for a selection
+	</div><br>
+	

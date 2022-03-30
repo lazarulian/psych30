@@ -1,0 +1,67 @@
+<script type="text/javascript">
+
+    function domo(n) {
+        // Setting the Thing to Green
+        if (n>0) {
+            document.getElementById('mo'+n).style.background='#a3b899';
+        }
+
+        for (i = 1; i <= 8; i++) {
+            if (i == n) {
+                continue;
+            }
+            document.getElementById('mo'+i).style.background='#65737e';
+        }
+    
+        // Add code to set all elements (first one is done for you)
+        switch (n) {
+            case 1:
+                outf="<input name='field1' type='text' style='font-size:24pt'>";
+                break;
+            case 2:
+                outf ="<textarea id='textbox' style='height:100px;width:100%'>";
+                break;
+            case 3:
+                outf = "<select id = 'field1' name = 'testit' style = 'font-size:24;' onchange = 'doit()'>";
+        }
+
+        load_div(n)
+
+        document.getElementById('textbox').value=outf;
+
+    } // End Domo
+
+    function load_div(n) {
+        switch (n) {
+            case 1:
+                document.getElementById('functional').innerHTML = "<textarea id='textbox' style='height:100px;width:100%'>";
+                break;
+            case 2:
+                document.getElementById('functional').innerHTML = "<textarea id='textbox' style='height:100px;width:100%'>";
+                break;
+            case 3:
+                document.getElementById('functional').innerHTML = 
+                "<select id='testit' name='presidents' style='font-size:30pt' onchange='loadit()'>";
+                break;
+
+        } // end switch
+    } // end load_div()
+     
+    </script>
+    
+    <body style='font-size:24pt'>
+    <form name='form1'>
+    Choose Input Element: <button type='button' style='font-size:24pt;'  onclick='domo(1)' id='mo1'>Text</button>
+    <button type='button' style='font-size:24pt;' onclick='domo(2)' id='mo2'>Textarea</button>
+    <button type='button' style='font-size:24pt;'  onclick='domo(3)' id='mo3'>Select</button>
+    <button type='button' style='font-size:24pt;'  onclick='domo(4)' id='mo4'>Checkbox</button>
+    <button type='button' style='font-size:24pt;'  onclick='domo(5)' id='mo5'>Color</button>
+    <button type='button' style='font-size:24pt;'  onclick='domo(6)' id='mo6'>Date</button>
+    <button type='button' style='font-size:24pt;'  onclick='domo(7)' id='mo7'>Password</button>
+    <button type='button' style='font-size:24pt;'  onclick='domo(8)' id='mo8'>File</button>
+    
+    <textarea id='textbox' style='height:100px;width:100%'>This Holds the HTML Code
+    </textarea><br>
+    
+    <div id='functional' style='border:solid 2px; font-size:20pt'>...PickSomething!
+    </div><br>
